@@ -81,4 +81,4 @@
 slot_name(Publication) ->
     lists:join(
       "_",
-      [pgmp_config:replication(logical, slot_prefix), Publication]).
+      [string:replace(pgmp_config:replication(logical, slot_prefix), "-", "_", all), Publication]).
